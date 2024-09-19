@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body class="overflow-x-hidden">
+    
+    <main class="text-slate-600 bg-gradient-to-br p-4 from-indigo-500 via-indigo-200 via-40% to-indigo-500  max-w-screen w-screen min-h-screen flex justify-center items-center">
+            <section class="p-5 bg-gradient-to-br shadow-lg from-indigo-300 via-violet-200 to-indigo-300 backdrop-blur-lg h-[calc(100vh-40px)]  w-[calc(100vw-40px)] rounded-xl">
+                
+                <div class=" p-5">
+                    <form action="" method="post" class="flex justify-between">
+                        <input type="search" class="border-0 ps-5 w-full rounded-l-full" placeholder="Enter the city">
+                        <input type="submit" class="btn rounded-r-full hover:cursor-pointer bg-indigo-600 hover:bg-indigo-700 px-5 text-white" value="Search">
+                    </form>
+
+                    <section id="infoSection" class="md:w-4/5 m-auto my-5 flex justify-between items-center">
+                        <div class="">
+                            <div class="flex items-center">
+                                <h1 id="cityName" class="text-xl font-medium">City</h1>
+                                <img width="50px" src="assets/images/sunny.png" alt="Weather icon" id="weatherIcon">
+                            </div>
+                            <div class="flex">
+                                <h1 id="temp" class="font-bold text-7xl">32</h1>
+                                <span id="tempUnit" class="text-xl text-gray-600">°C</span>
+                            </div>
+                            <div id="dayOfWeek" class="text-xl my-3">Sunday</div>
+                        </div>
+                        <div class="">
+                            <p>Precipitation: <span id="precipitation">1</span>%</p>
+                            <p>Humidity: <span id="humidity">52</span>%</p>
+                            <p>Wind: <span id="wind">5</span>km/h</p>
+                        </div>
+                    </section>
+
+
+                    <div id="weatherForecast" class="mt-24 flex flex-wrap justify-around gap-3">
+                        <div class="w-1/4 md:w-1/5 lg:w-1/6 mt-5 hover:text-slate-200 rounded-lg hover:bg-indigo-300 shadow-md py-5 shadow-indigo-300">
+                            <h1 class="text-center md:text-2xl font-bold">Monday</h1>
+                            <img width="80px" class="m-auto" src="assets/images/sunny.png" alt="Weather icon">
+                            <div class="flex justify-center items-center">
+                                <h1 class="md:text-2xl font-bold" id="day1Card">32</h1>
+                                <span class="text-xl">°C</span>
+                            </div>
+                        </div>
+                        <div class="w-1/4 md:w-1/5 lg:w-1/6 mt-5 hover:text-slate-200 rounded-lg hover:bg-indigo-300 shadow-md py-5 shadow-indigo-300">
+                            <h1 class="text-center md:text-2xl font-bold">Tuesday</h1>
+                            <img width="80px" class="m-auto" src="assets/images/cloudy.png" alt="Weather icon">
+                            <div class="flex justify-center items-center">
+                                <h1 class="md:text-2xl font-bold" id="day2Card">32</h1>
+                                <span class="text-xl">°C</span>
+                            </div>
+                        </div>
+                        <div class="w-1/4 md:w-1/5 lg:w-1/6 mt-5 hover:text-slate-200 rounded-lg hover:bg-indigo-300 shadow-md py-5 shadow-indigo-300">
+                            <h1 class="text-center md:text-2xl font-bold">Wednesday</h1>
+                            <img width="80px" class="m-auto" src="assets/images/partlyCloudy.png" alt="Weather icon">
+                            <div class="flex justify-center items-center">
+                                <h1 class="md:text-2xl font-bold" id="day3Card">32</h1>
+                                <span class="text-xl">°C</span>
+                            </div>
+                        </div>
+                        <div class="w-1/4 md:w-1/5 lg:w-1/6 mt-5 hover:text-slate-200 rounded-lg hover:bg-indigo-300 shadow-md py-5 shadow-indigo-300">
+                            <h1 class="text-center md:text-2xl font-bold">Thursday</h1>
+                            <img width="80px" class="m-auto" src="assets/images/lightening.png" alt="Weather icon">
+                            <div class="flex justify-center items-center">
+                                <h1 class="md:text-2xl font-bold" id="day4Card">32</h1>
+                                <span class="text-xl">°C</span>
+                            </div>
+                        </div>
+                        <div class="w-1/4 md:w-1/5 lg:w-1/6 mt-5 hover:text-slate-200 rounded-lg hover:bg-indigo-300 shadow-md py-5 shadow-indigo-300">
+                            <h1 class="text-center md:text-2xl font-bold">Friday</h1>
+                            <img width="80px" class="m-auto" src="assets/images/sunny.png" alt="Weather icon">
+                            <div class="flex justify-center items-center">
+                                <h1 class="md:text-2xl font-bold" id="day5Card">32</h1>
+                                <span class="text-xl">°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

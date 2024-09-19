@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        @font-face {font-family: clock; src: url(alarm-clock.ttf);}
+         .clock{font-family: clock;}
+        .timer-border-blue {
+            clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            transition: clip-path 40s linear;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <h1 class="text-center font-bold text-4xl my-10 ">Current Time</h1>
+    <div class="timer-container">
+        <p class="font-extrabold text-7xl text-center clock" id="currentTime">
+            <span id="currentHour">00</span>:<span id="currentMinute">00</span>:<span id="currentSecond">00</span>
+        </p>
+    </div>
+
+
+    <hr class="mt-10 ">
+  
+
+    <h1 class="text-center font-bold text-4xl my-10 ">Timer</h1>
+
+    <!-- <div id="setTimer" >
+        <div id="inputGroup" class="font-extrabold text-7xl text-center justify-center items-center flex flex-row">
+            <input type="text" id="timerHour" value="00" class="inline text-center mx-1 w-[3ch] border " maxlength="2"/>
+            :<input type="text" id="timerMinute" value="00" class="inline text-center mx-1 w-[3ch] border " maxlength="2"/>
+            :<input type="text" id="timerSecond" value="00" class="inline text-center mx-1 w-[3ch] border " maxlength="2"/>
+        </div>
+
+        <div id="timerDisplay" class=" justify-center items-center flex flex-row">
+            <div class="innerTimer justify-center items-center flex flex-row text-6xl font-extrabold w-[10ch] aspect-square rounded-full border-2">
+                <span id="displayHour">00</span>:<span id="displayMinute">00</span>:<span id="displaySecond">00</span>
+            </div>
+        </div>
+        
+    </div> -->
+    <div id="setTimer">
+        <div id="timerInputs" class="text-center">
+            <div class="clock font-extrabold border text-7xl text-center justify-center items-center flex flex-row">
+                <input type="number" min="0"  id="timerHour" value="00" class="inline text-center mx-1 w-[3ch] " maxlength="2"/>
+                :<input type="number" min="0" max="60" id="timerMinute" value="00" class="inline text-center mx-1 w-[3ch] " maxlength="2"/>
+                :<input type="number" min="0" max="60" id="timerSecond" value="00" class="inline text-center mx-1 w-[3ch] " maxlength="2"/>
+            </div>
+            <button id="setTimerButton" class="bg-blue-500 hover:bg-blue-700 mt-8 text-white font-bold py-2 px-4 rounded">Set Timer</button>
+        </div>
+    
+        <div id="timerDisplay" class="hidden">
+            <div class="mx-auto innerTimer clock justify-center items-center flex flex-row text-6xl font-extrabold w-[10ch] aspect-square relative">
+                <div class="timer-border-gray absolute top-0 left-0 w-full h-full border-2 border-gray-400 rounded-full"></div>
+                <div class="timer-border-blue absolute top-0 left-0 w-full h-full border-3 border-blue-500 rounded-full" id="timerBorderBlue"></div>
+                <div id="timerInnerDisplay"><span id="displayHour">00</span>:<span id="displayMinute">00</span>:<span id="displaySecond">00</span></div>
+            </div>
+            <div class="flex mt-5 flex-row justify-center ">
+                <button id="cancelButton" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-2">Cancel</button>
+                <button id="pauseButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2">Pause</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <hr class="mt-10 ">
+
+
+    <h1 class="text-center font-bold text-4xl my-10">Stopwatch</h1>
+    <div class="timer-container clock">
+        <p class="font-extrabold text-7xl text-center" id="stopwatch">
+            <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>
+        </p>
+    </div>
+    <div class="flex flex-row items-center justify-center w-full mt-8 font-bold text-slate-100">
+        <button class="bg-emerald-600 rounded hover:bg-emerald-700 px-9 py-2" id="startElement" onclick="startClock()">Start</button>
+        <button class="bg-rose-600 mx-1 rounded hover:bg-rose-700 px-9 py-2" id="stopElement" onclick="stopClock()">Stop</button>
+        <button class="bg-blue-600 rounded hover:bg-blue-700 px-9 py-2" onclick="resetClock()">Reset</button>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+    
+    <script src="stopwatch.js"></script>
+
+</body>
+</html>

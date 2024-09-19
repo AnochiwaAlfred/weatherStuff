@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM Projects</title>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <style>
+            html{scroll-behavior:smooth;}
+            ::-webkit-scrollbar{width: 4px; background-color: #212529;}
+            ::-webkit-scrollbar-thumb{background-color: #616d79;}
+            @font-face {
+                font-family: catamaran;
+                src: url(catamaranVariableFont.ttf);
+            }
+            *{
+                font-family: catamaran;
+            }
+
+            #myAlert{
+                position: absolute;
+                min-width: 12rem;
+                top: 110px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation: slideDownIn 1s ease-in-out forwards;
+            }
+
+            @keyframes slideDownIn {
+                0%{
+                    top: 0px;
+                    opacity: 0;
+                }
+                100%{
+                    top: 100px;
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideUpOut {
+                0%{
+                    top: 110px;
+                    opacity: 1;
+                }
+                100%{
+                    top: 0px;
+                    opacity: 0;
+                }
+            }
+        </style>
+        
+    </head>
+
+    <body class="">
+        <nav class="navbar bg-dark py-3">
+            <div class="container  d-flex justify-content-between align-items-center">
+                <a class="navbar-brand text-light d-flex justify-content-center align-items-center" href="#">
+                    <img class="me-1" src="android.png" width="26">
+                    <span>Android</span>
+                </a>
+                
+                <div>
+                    <a href="#amazon" class="ms-1 btn btn-sm rounded-0 btn-outline-light">Amazon</a>
+                    <a href="#ytSubscribe" class="ms-1 btn btn-sm rounded-0 btn-outline-danger">YouTube</a>
+                    <a href="#addToCartButton" onclick="addToCartButton()" class="ms-1 btn btn-sm rounded-0 btn-outline-warning">Add to Cart</a>
+                </div>
+            </div>
+          </nav>
+        
+        <div class="bg-dark bg-gradient d-flex justify-content-center align-items-center " 
+            style="
+                height:65vh;
+                padding-bottom:2rem;
+                clip-path: polygon(
+                    0% 0%,
+                    100% 0%,
+                    100% calc(100% - 2rem),
+                    0% 100%
+                );
+            "
+        >
+            <h1 class="text-white text-center" style="font-size: 7vw; font-weight: 800;">
+                Rock Paper Scissors
+            </h1>
+        </div>
+
+       <main class="container mt-4">
+            <h5 id="ytSubscribe">YouTube Subscribe Button</h5>
+            <button class="js-subscribe-button btn btn-outline-danger btn-sm rounded-0" onclick="subscribe()">Subscribe</button>
+            
+            <h5 class="mt-5" id="amazon">Amazon Shipping Calculator</h5>
+            <p class="js-total-cost"></p>
+            <input onkeydown="handleCostKeyDown(event)" onkeyup="calculateTotal()" type="number" id="jsCostInput" class="form-control form-control-sm mb-1 rounded-0" placeholder="Cost of order">
+            <button class="btn btn-danger btn-sm rounded-0 float-end" onclick="calculateTotal()">Calculate</button>
+            <p class="text-danger" id="calculateError"></p>
+
+            <h5 id="buttons" class="mt-5">Buttons</h5>
+            <button class="checkButtons btn btn-outline-dark btn-sm" id="checkButton1" onclick="checkButtonz(event)">Subscribe</button>
+            <button class="checkButtons btn btn-outline-dark btn-sm" id="checkButton2" onclick="checkButtonz(event)">Donate</button>
+            <button class="checkButtons btn btn-outline-dark btn-sm" id="checkButton3" onclick="checkButtonz(event)">Report</button>
+            
+      
+            <h5 id="" class="mt-5">Todo List</h5>
+            <div class="p-3">
+                <div class="row gap-2">
+                    <input onkeydown="handleTodoKeyDown(event)" type="text" id="toDoListInput" class="col form-control form-control-sm mb-1 rounded-0" placeholder="Enter todo item">
+                    <input type="date" id="toDoListDateInput" class="col form-control form-control-sm mb-1 rounded-0">
+                </div>
+                <div class="row ">
+                    <button class="btn col-2 btn-success btn-sm rounded-0 " onclick="addToDo()">Add Item</button>
+                </div>
+                <!-- <ol class="mt-5 list-group list-group-numbered" id="todoList"></ol> -->
+                 <table class="mt-5 table table-dark table-striped table-hover" >
+                    <tr>
+                        <thead>
+                            <th>S/N</th>
+                            <th>Item</th>
+                            <th>Due Date</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody id="todoList">
+
+                        </tbody>
+                    </tr>
+                 </table>
+            </div>
+
+            <div>
+                <h5 id="" class="mt-5 mb-3">Update Title Messages</h5>
+
+                <button onclick="messages--" class="ms-1 btn btn-sm btn-outline-info">Decrease Messages</button>
+                <button onclick="messages++" class="ms-1 btn btn-sm btn-outline-success">Increase Messages</button>
+            </div>
+           
+
+        </main>
+
+       <br><br><br><br><br><br>
+       <br><br><br><br><br><br>
+       <br><br><br><br><br><br>
+        
+        <script src="bootstrap.min.js"></script>
+        <script src="rps.js"></script>
+    </body>
+</html>
